@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Practico2v2</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="editar_contacto">Editar Contacto</string>
+    <string name="agregar_telefono">Agregar telefono</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="detalle_del_contacto">Detalle del contacto</string>
+    <string name="correo_electronico">Correo electronico</string>
+    <string name="lista_de_telefonos">Lista de Telefonos</string>
+    <string name="direccion">[Direccion]</string>
+    <string name="ciudad2">[Ciudad]</string>
+    <string name="email">[Email]</string>
+    <string name="edad">Edad:</string>
+    <string name="eliminar">Eliminar</string>
+</resources>

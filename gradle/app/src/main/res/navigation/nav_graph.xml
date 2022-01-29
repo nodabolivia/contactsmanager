@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.cursoandroid.practico2v2.ui.fragments.MainFragment"
+        android:label="Lista contactos"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/actionDetailContacto"
+            app:destination="@id/detalleContactoFragment" />
+        <action
+            android:id="@+id/actionAddContacto"
+            app:destination="@id/formContactoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formContactoFragment"
+        android:name="com.cursoandroid.practico2v2.ui.fragments.FormContactoFragment"
+        android:label="Agregar contacto"
+        tools:layout="@layout/fragment_form_contacto" >
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/formTelefonoFragment"
+        android:name="com.cursoandroid.practico2v2.ui.fragments.FormTelefonoFragment"
+        android:label="Agregar telefono"
+        tools:layout="@layout/fragment_form_telefono" >
+
+        <argument
+            android:name="currentContacto"
+            app:argType="com.cursoandroid.practico2v2.dal.models.Contacto"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleContactoFragment"
+        android:name="com.cursoandroid.practico2v2.ui.fragments.DetalleContactoFragment"
+        android:label="Detalle de contacto"
+        tools:layout="@layout/fragment_detalle_contacto">
+
+
+        <action
+            android:id="@+id/actionAddTelefono"
+            app:destination="@id/formTelefonoFragment" />
+
+        <action
+            android:id="@+id/actionUpdateContacto"
+            app:destination="@id/formContactoUpdateFragment" />
+        <argument
+            android:name="currentContactoWithTelefono"
+            app:argType="com.cursoandroid.practico2v2.dal.models.ContactoWithTelefono"
+            app:nullable="true" />
+        <action
+            android:id="@+id/actionDetailTelefono"
+            app:destination="@id/detalleTelefonoFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/formTelefonoUpdateFragment"
+        android:name="com.cursoandroid.practico2v2.ui.fragments.FormTelefonoUpdateFragment"
+        android:label="Actualizar telefono"
+        tools:layout="@layout/fragment_form_telefono_update" >
+        <argument
+            android:name="currentTelefono"
+            app:argType="com.cursoandroid.practico2v2.dal.models.Telefono" />
+    </fragment>
+    <fragment
+        android:id="@+id/formContactoUpdateFragment"
+        android:name="com.cursoandroid.practico2v2.ui.fragments.FormContactoUpdateFragment"
+        android:label="Actualizar contacto"
+        tools:layout="@layout/fragment_form_contacto_update" >
+        <argument
+            android:name="currentContacto"
+            app:argType="com.cursoandroid.practico2v2.dal.models.Contacto" />
+        <action
+            android:id="@+id/actionSaveContacto"
+            app:destination="@id/detalleContactoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleTelefonoFragment"
+        android:name="com.cursoandroid.practico2v2.ui.fragments.DetalleTelefonoFragment"
+        android:label="Detalle del telefono"
+        tools:layout="@layout/fragment_detalle_telefono" >
+        <action
+            android:id="@+id/actionUpdateTelefono"
+            app:destination="@id/formTelefonoUpdateFragment" />
+        <argument
+            android:name="currentTelefono"
+            app:argType="com.cursoandroid.practico2v2.dal.models.Telefono" />
+    </fragment>
+</navigation>
